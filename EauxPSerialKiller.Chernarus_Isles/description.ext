@@ -1,0 +1,59 @@
+#include "BDX\defines.hpp"
+#include "BDX\BDX_SpawnMenuLite.hpp"
+#include "BDX\BDX_WeaponMenu.hpp"
+#include "BDX\BDX_CopArmory.hpp"
+
+class Header
+{
+ gameType = Team;            //DM, Team, Coop, ...
+ minPlayers = 2;             //min # of players the mission supports
+ maxPlayers = 26;            //Max # of players the mission supports
+
+};
+
+respawn=3;
+respawndelay=10;
+
+
+class Params
+{
+	class Time
+	{
+		title = "Daytime";
+		values[] = {15,0,4,9};
+		texts[] = {"Morning","Afternoon","Evening","Night"};
+		default = 0;
+	};
+	class DownScale
+	{
+		title = "Civilians";
+		values[] = {0.25,0.5,1,1.5,2};
+		texts[] = {"25%","50%","100%","150%","200%"};
+		default = 1;
+	};
+	class Viewdistance
+	{
+		title = "Viewdistance";
+		values[] = {1000,1500,1800,2000,2500};
+		texts[] = {"1000","1500","1800","2000","2500"};
+		default = 1500;
+	};
+
+};
+
+class CfgSounds
+{
+sounds[] = {}; 
+class CarAlarm
+{
+name = "CarAlarm";
+sound[] = {"\sound\Caralarm.ogg", 15, 1};
+titles[] = {};
+};
+class CopSiren
+{
+name = "CopSiren";
+sound[] = {"\sound\siren.ogg", 15, 1};
+titles[] = {};
+};
+};
