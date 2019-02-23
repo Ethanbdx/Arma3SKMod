@@ -27,10 +27,6 @@ _ScrMarkerHandler = [] execVM "common\markers.sqf";
 
 sleep 1;
 
-_hide_pistol = player addAction ["Hide Pistol", "common\hidepistol.sqf", [], 0, false, false, "", "(handgunWeapon player != '') AND side player==EAST"];
-_take_pistol = player addAction ["Take Pistol", "common\takepistol.sqf", [], 0, false, false, "", "BDX_HidingPistol"];
-
-
 waituntil {ScriptDone _ScrMarkerHandler};
 _ScrMarkerHandler = [] execVM "common\markers.sqf";
 
