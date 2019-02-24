@@ -2,7 +2,7 @@
 _c=random 2.00;
 _car=_this select 0;
 _sound="CarAlarm";
-if (_c<0.66  or (_car in BDX_NoAlert)) then {
+if ((_c<0.66) OR (_car in BDX_NoAlert)) then {
 	if(_car in BDX_NoAlert) then {
 		//Do nothing.
 	} else {
@@ -18,6 +18,5 @@ BDX_Sound=[_sound,_car];
 
 publicvariable "BDX_Sound";
 _car say3D _sound;
-_sound="CarAlarm";
 BDX_NoAlert pushBack _car;
 };

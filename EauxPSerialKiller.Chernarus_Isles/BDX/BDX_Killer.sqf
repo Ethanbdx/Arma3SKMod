@@ -1,6 +1,6 @@
 
 sleep 4;
-if (isPlayer (_this select 0)) then {
+if ((_this select 0)==player) then {
 	// Define vehicles
 	_selRow = 2100;
 	_selRow2 = 2101;

@@ -49,7 +49,7 @@ if (_unit==_killer) then {
 		_marker setmarkercolor "ColorBlue";
 		_marker setmarkersize [0.4,0.4];
 	 };
-	if ((side _killer) == CIVILIAN) then {
+	if (((side _killer) == CIVILIAN) OR ((side _killer) == INDEPENDENT)) then {
 		_msg = [getpos _unit] call f_CivKillMSG;
 		BDX_CopSend=_msg;
 		publicvariable "BDX_CopSend";
