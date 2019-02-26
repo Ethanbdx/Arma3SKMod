@@ -10,6 +10,7 @@ class Header
  maxPlayers = 26;            //Max # of players the mission supports
 
 };
+enableDebugconsole = 1;
 ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
 ReviveUnconsciousStateMode = 0;         //0: basic, 1: advanced, 2: realistic
 ReviveRequiredTrait = 0;                //0: none, 1: medic trait is required
@@ -25,7 +26,7 @@ corpseManagerMode = 2;
 corpseLimit = 5;
 corpseRemovalMinTime = 30;
 corpseRemovalMaxTime = 60;
-disabledAI = 1;
+disabledAI = 0;
 
 class Params
 {
