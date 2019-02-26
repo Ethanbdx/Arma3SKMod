@@ -69,7 +69,7 @@ class BDX_btnCreate: RscButton
 	y = 0.511 * safezoneH + safezoneY;
 	w = 0.0515625 * safezoneW;
 	h = 0.022 * safezoneH;
-	action = "_veh = ((BDX_SpawnVehicles select lbCurSel 4302) select 0); _spawn = _veh createVehicle getpos (nearestObjects [player, [""HeliHEmpty""], 200] select 0);if(_veh == 'C_SUV_01_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_suv_b.paa']; _spawn execVM 'server\siren.sqf';}; if (_veh == 'C_Hatchback_01_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_hb_w.paa']; _spawn execVM 'server\siren.sqf';};if(_veh == 'C_Hatchback_01_sport_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_hb_sports.paa']; _spawn execVM 'server\siren.sqf';};closeDialog 999;";
+	action = "_veh = ((BDX_SpawnVehicles select lbCurSel 4302) select 0); _spawn = _veh createVehicle getpos (nearestObjects [player, [""HeliHEmpty""], 200] select 0);if(_veh == 'C_SUV_01_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_suv_b.paa']; _spawn execVM 'server\siren.sqf';}; if (_veh == 'C_Hatchback_01_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_hb_w.paa']; _spawn execVM 'server\siren.sqf';};if(_veh == 'C_Hatchback_01_sport_F') then {_spawn setObjectTextureGlobal [0, 'cop\police_hb_sports.paa']; _spawn execVM 'server\siren.sqf';}; _spawn addItemCargoGlobal ['Toolkit',2]; closeDialog 999;";
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END

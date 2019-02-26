@@ -1,5 +1,4 @@
-// Define vehicles
-	_selRow = 2100;
+_selRow = 2100;
 	_selRow2 = 2101;
 	_weap = "";
 	_mag = [];
@@ -21,7 +20,7 @@
 	// Fill the funny Listbox with loadouts
 	_index = lbAdd [2100, "AKM & P07"];
 	_index = lbAdd [2100, "Rook-40 Silenced"];
-	_index = lbAdd [2100, "PDW 2000 w/ Holo & Rook-40"];
+	_index = lbAdd [2100, "PDW 2000 w/ Holo & Explosive Charges"];
 	_index = lbAdd [2100, "MP5SD w/ Holo"];
 	_index = lbAdd [2100, "M4 w/ RCO & Rook-40"];
 	_index = lbAdd [2100, "CMR-76 & PM"];
@@ -43,7 +42,6 @@
 	_skins = lbAdd[2101, "Green Striped Polo"];
 	_skins = lbAdd[2101, "Yellow Shirt"];
 	_skins = lbAdd[2101, "Orange Shirt"];
-	_skins = lbAdd[2101, "Marshal"]; 
 	_skins = lbAdd[2101, "Utility Worker"];
 
 
@@ -76,8 +74,8 @@
 			case 2: 	{
 				_Weap = "hgun_PDW2000_Holo_F";
 				_Mag = ["30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag"];
-				_SMag = ["16Rnd_9x21_Mag"];
-				_sweap ="hgun_Rook40_F","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag";
+				_SMag = ["IEDLandBig_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag"];
+				_sweap ="";
 				_Attach = "";
 						};
 			
@@ -124,7 +122,7 @@
 				_skin = "U_C_Poloshirt_blue";
 				};
 			case 2: {
-				_skin = "U_C_Poloshirt_burgundy";
+				_skin = "U_C_Poloshirt_burgundye";
 				};
 			case 3: {
 				_skin = "U_C_Poloshirt_tricolour";
@@ -166,9 +164,6 @@
 				_skin = "U_C_Man_casual_6_F";
 				};	
 			case 16: {
-				_skin = "U_Marshal";
-				};	
-			case 17: {
 				_skin = "U_C_ConstructionCoverall_Blue_F";
 				};																
 			};
@@ -182,17 +177,21 @@
 	// Add selected weapons to player
 	removeUniform player;
 	removeallweapons player;
-	removeBackPack player;
 	if (_Weap == "FakeWeapon") then {
 		player addVest "V_BandollierB_blk";
 		player addBackpack "O_UAV_01_backpack_F";
 		player addItem "O_UavTerminal";
 		player assignItem "O_UavTerminal";
 	} else {
-		player addBackpack "B_AssaultPack_blk";
-		_backpack = unitbackPack player;
-		_backpack hideObjectGlobal true;
-		_backPack setObjectTextureGlobal [0,""];
+		if (_Weap == "hgun_PDW2000_Holo_F") then {
+			player addVest "V_Chestrig_blk";
+			player addBackpack "B_Carryall_cbr";
+		} else {
+			player addBackpack "B_AssaultPack_blk";
+			_backpack = unitbackPack player;
+			_backpack hideObjectGlobal true;
+			_backPack setObjectTextureGlobal [0,""];
+		};
 	};
 
 	player forceAddUniform _skin;
@@ -225,3 +224,4 @@
 			sleep 0.01;
 		};
 	};
+};

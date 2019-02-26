@@ -126,6 +126,10 @@ while {dialog} do {
 
 // Add selected weapons to player
 removeallweapons player;
+player addBackpack "B_AssaultPack_blk";
+_backpack = unitbackPack player;
+_backpack hideObjectGlobal true;
+_backPack setObjectTextureGlobal [0,""];
 _i = 0;
 while {_i <= ((count _Mag) -1)} do {
 player addmagazine (_mag select _i);

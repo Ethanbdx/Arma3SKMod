@@ -24,7 +24,7 @@ if ((_this select 0)==player) then {
 	// Fill the funny Listbox with loadouts
 	_index = lbAdd [2100, "AKM & P07"];
 	_index = lbAdd [2100, "Rook-40 Silenced"];
-	_index = lbAdd [2100, "PDW 2000 w/ Holo & Rook-40"];
+	_index = lbAdd [2100, "PDW 2000 w/ Holo & Explosive Charges"];
 	_index = lbAdd [2100, "MP5SD w/ Holo"];
 	_index = lbAdd [2100, "M4 w/ RCO & Rook-40"];
 	_index = lbAdd [2100, "CMR-76 & PM"];
@@ -78,8 +78,8 @@ if ((_this select 0)==player) then {
 			case 2: 	{
 				_Weap = "hgun_PDW2000_Holo_F";
 				_Mag = ["30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag"];
-				_SMag = ["16Rnd_9x21_Mag"];
-				_sweap ="hgun_Rook40_F","16Rnd_9x21_Mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag";
+				_SMag = ["IEDLandBig_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag","IEDLandSmall_Remote_Mag"];
+				_sweap ="";
 				_Attach = "";
 						};
 			
@@ -187,10 +187,15 @@ if ((_this select 0)==player) then {
 		player addItem "O_UavTerminal";
 		player assignItem "O_UavTerminal";
 	} else {
-		player addBackpack "B_AssaultPack_blk";
-		_backpack = unitbackPack player;
-		_backpack hideObjectGlobal true;
-		_backPack setObjectTextureGlobal [0,""];
+		if (_Weap == "hgun_PDW2000_Holo_F") then {
+			player addVest "V_Chestrig_blk";
+			player addBackpack "B_Carryall_cbr";
+		} else {
+			player addBackpack "B_AssaultPack_blk";
+			_backpack = unitbackPack player;
+			_backpack hideObjectGlobal true;
+			_backPack setObjectTextureGlobal [0,""];
+		};
 	};
 
 	player forceAddUniform _skin;

@@ -10,11 +10,12 @@ if ((_c<0.66) OR (_car in BDX_NoAlert)) then {
 	};
 } else {
 	BDX_Sound=[_sound,_car];
-	_city = [gt["A Car has been stolen near %1",(_city select 1)];
-	BDX_CopSetpos _car] call f_GetNearestCity;
-	_msg=formaend=_msg;
+	_city = [getpos _car] call f_GetNearestCity;
+	_msg=format["A Car has been stolen near %1",(_city select 1)];
+	BDX_CopSend=_msg;
 	publicvariable "BDX_CopSend";
 	[West,"HQ"] sidechat _msg;
+	
 	publicvariable "BDX_Sound";
 	_car say3D _sound;
 	BDX_NoAlert pushBack _car;
