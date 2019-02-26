@@ -46,7 +46,6 @@ if ((_this select 0)==player) then {
 	_skins = lbAdd[2101, "Green Striped Polo"];
 	_skins = lbAdd[2101, "Yellow Shirt"];
 	_skins = lbAdd[2101, "Orange Shirt"];
-	_skins = lbAdd[2101, "Fisherman"]; 
 	_skins = lbAdd[2101, "Utility Worker"];
 
 
@@ -169,9 +168,6 @@ if ((_this select 0)==player) then {
 				_skin = "U_C_Man_casual_6_F";
 				};	
 			case 16: {
-				_skin = "U_C_Fisherman";
-				};	
-			case 17: {
 				_skin = "U_C_ConstructionCoverall_Blue_F";
 				};																
 			};
