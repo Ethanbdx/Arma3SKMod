@@ -26,7 +26,6 @@ corpseManagerMode = 2;
 corpseLimit = 5;
 corpseRemovalMinTime = 30;
 corpseRemovalMaxTime = 60;
-disabledAI = 0;
 
 class Params
 {
