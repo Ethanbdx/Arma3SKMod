@@ -8,6 +8,8 @@ class Header
 	gameType = Team;            //DM, Team, Coop, ...
 	minPlayers = 1;             //min # of players the mission supports
 	maxPlayers = 26;            //Max # of players the mission supports
+};
+
 	enableDebugconsole = 1;
 	ReviveMode = 1;                         //0: disabled, 1: enabled, 2: controlled by player attributes
 	ReviveUnconsciousStateMode = 0;         //0: basic, 1: advanced, 2: realistic
@@ -24,8 +26,6 @@ class Header
 	corpseLimit = 5;
 	corpseRemovalMinTime = 30;
 	corpseRemovalMaxTime = 60;
-};
-
 
 class Params
 {
@@ -111,7 +111,6 @@ class CfgDifficultyPresets
 			commands = 0;             // Commands           (0 = never, 1 = fade out, 2 = always)
 			waypoints = 2;            // Waypoints          (0 = never, 1 = fade out, 2 = always)
             tacticalPing = 1;       //Tactical Ping (0 = disabled, 1 = enabled)
-
 			// Personal awareness
 			weaponInfo = 2;           // Weapon info        (0 = never, 1 = fade out, 2 = always)
 			stanceIndicator = 2;      // Stance indicator   (0 = never, 1 = fade out, 2 = always)
