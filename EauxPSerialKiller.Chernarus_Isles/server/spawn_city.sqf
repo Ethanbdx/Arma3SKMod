@@ -15,7 +15,7 @@
 		sleep 0.01;
 		BDX_CivisAlive=BDX_CivisAlive+1;
 	};
-	player sidechat format ["%1 civilians spawned in %2.",ceil(_count/BDX_DownScale),_name];
+	player globalChat format ["%1 civilians spawned in %2.",ceil(_count/BDX_DownScale),_name];
 	sleep 0.01;
 }foreach BDX_Cities;
 sleep 0.1;

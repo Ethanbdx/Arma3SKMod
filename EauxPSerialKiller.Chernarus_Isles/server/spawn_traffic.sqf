@@ -12,7 +12,7 @@ for [{_c=0},{_c<BDX_Traffic/BDX_DownScale},{_c=_c+1}] do {
 	_civi = BDX_TrafficModels select floor(random(count(BDX_TrafficModels))) createUnit [_cpos, _group, "BDX_Civis=BDX_Civis+[this];dumvar = [this] execVM 'server\trafficki.sqf';this moveindriver car; this assignasdriver car;"];
 	sleep 0.01;
 	BDX_CivisAlive=BDX_CivisAlive+1;
-	player sidechat "Civilian vehicle spawned.";
+	player globalChat "Civilian vehicle spawned.";
 
 };
 
@@ -21,5 +21,5 @@ sleep 0.05;
 execVM "server\markers.sqf";
 
 BDX_CivsReady=true;
-player sidechat "All Civilians have spawned.";
+player globalChat "All Civilians have spawned.";
 publicvariable "BDX_CivsReady";
