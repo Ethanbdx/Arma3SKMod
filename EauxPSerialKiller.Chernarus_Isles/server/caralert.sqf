@@ -1,11 +1,11 @@
 
-_c=random 2.00;
+_c=random 1.00;
 _car=_this select 0;
 _sound="CarAlarm";
 if(_car in BDX_NoAlert) then {
 	return;
 } else { 
-	if (_c<0.66) then {
+	if (_c<0.80) then {
 		BDX_NoAlert pushBack _car;
 	}
 	else {
