@@ -21,15 +21,15 @@ kay = createDialog "BDX_CopArmory";
 
 //Fill the Listbox with loadouts
 _index = lbAdd [2100, "ACP-C2"];
-If (7 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "Vermin & ACP-C2"];};
-If (13 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "Sting w/ ACO & ACP-C2"];};
-If (18 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "AKS-74U & ACP-C2"];};
-If (23 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "SPAR-16 w/ ACO & ACP-C2"];};
-If (27 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "MXC w/ Holo & 4-Five"];};
-If (32 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "SPAR-17 w/ RCO & 4-Five"];};
-If (37 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "MX SD w/ Holo & 4-Five"];};
-If (44 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "MX SW w/ RCO & 4-Five"];};
-If (50 <= BDX_CivCountForCops) then {_index = lbAdd [2100, "M320 LRR w/ LRPS & 4-Five w/ MRD"];};
+If (7 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "Vermin & ACP-C2"];};
+If (13 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "Sting w/ ACO & ACP-C2"];};
+If (18 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "AKS-74U & ACP-C2"];};
+If (23 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "SPAR-16 w/ ACO & ACP-C2"];};
+If (27 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "MXC w/ Holo & 4-Five"];};
+If (32 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "SPAR-17 w/ RCO & 4-Five"];};
+If (37 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "MX SD w/ Holo & 4-Five"];};
+If (44 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "MX SW w/ RCO & 4-Five"];};
+If (50 <= (BDX_KilledCivis - BDX_CopKilledCivis)) then {_index = lbAdd [2100, "M320 LRR w/ LRPS & 4-Five w/ MRD"];};
 
 lbSetCurSel [_selRow, 0];
 

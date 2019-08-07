@@ -17,7 +17,7 @@ BDX_SpawnDialog = createdialog "BDX_SpawnMenuLite";
 // with vehicles
 _i = 0;
 while {_i < (count BDX_SpawnVehicles)} do {
-	if ((((BDX_SpawnVehicles select _i) select 1)/BDX_DownScale)<=BDX_CivCountForCops) then {
+	if ((((BDX_SpawnVehicles select _i) select 1)/BDX_DownScale)<=BDX_KilledCivis) then {
 		_text = getText (configFile >> "CfgVehicles" >> ((BDX_SpawnVehicles select _i) select 0) >> "displayname");
 		_index = lbAdd [4302, _text];
 	};

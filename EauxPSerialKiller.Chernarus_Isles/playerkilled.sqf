@@ -9,9 +9,7 @@ waituntil {(alive player)};
 
 
 if (side player==East) then {
-	_Jail = [Jail1,Jail2,Jail3];
-	_random = selectRandom _Jail;
-	player setpos getpos _random;
+	player setpos getpos Jail;
 	removeallweapons player;
 	sleep 5;
 	player addWeapon "HandGunBase";

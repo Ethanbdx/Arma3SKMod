@@ -30,7 +30,7 @@ if (_unit==_killer) then {
 		BDX_CopSend=_msg;
 		publicvariable "BDX_CopSend";
 		[West,"HQ"] sideChat _msg;
-		BDX_KilledCivis=BDX_KilledCivis+1;
+		BDX_KilledCivis=BDX_KilledCivis + 1;
 		_name = format["markericvkilled%1",(random 999)];
 		_marker = createMarker [_name, getpos _unit];
 		_marker setmarkertype "mil_Objective";
@@ -38,7 +38,7 @@ if (_unit==_killer) then {
 		_marker setmarkersize [0.4,0.4];
 	};
 	if ((side _killer) == WEST) then {
-		BDX_CopKilledCivis = BDX_CopKilledCivis+1;
+		BDX_CopKilledCivis = BDX_CopKilledCivis + 1;
 		_msg = [name _killer,getpos _unit] call f_CopKillMSG;
 		BDX_CopSend=_msg;
 		publicvariable "BDX_CopSend";

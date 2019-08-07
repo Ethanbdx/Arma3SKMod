@@ -1,7 +1,6 @@
 
 BDX_KilledCivis=0;
 BDX_CopKilledCivis=0;
-BDX_CivCountForCops = BDX_KilledCivis - BDX_CopKilledCivis;
 BDX_CivisAlive=0;
 BDX_Cops=[];
 BDX_Sound=[];
