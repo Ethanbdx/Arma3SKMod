@@ -15,6 +15,7 @@ SyncGlobalVars = {
 	publicVariable "CivsReady";
 	publicVariable "InvestigatedBodies";
 	publicVariable "StartLocation";
+	publicVariable "KillerStartLocations";
 };
 
 CreateKillMarker = {
@@ -63,7 +64,7 @@ CreateKillerMarker= {
 };
 
 "RevealedKiller" addPublicVariableEventHandler {
-	private _pos = getPos (_this select 1);
+	private _pos = getPos ((_this select 1) select 0);
 	private _message = [_pos] call GetKillerLocationMessage;
 	[_message] call SendMessageCop;
 };

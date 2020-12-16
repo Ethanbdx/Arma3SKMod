@@ -1,6 +1,8 @@
 private _unit = _this select 0;
 deleteVehicle (_this select 1);
 _unit enableFatigue false;
+_unit enableStamina false;
+_unit setCustomAimCoef 0.35;
 
 _unit addEventHandler ["HandleRating", {
 	private _value = 0;
