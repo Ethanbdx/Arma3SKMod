@@ -63,8 +63,9 @@ CreateKillerMarker= {
 };
 
 "RevealedKiller" addPublicVariableEventHandler {
-	["Enough evidence collected, the killer has been temporarily marked on your map."] call SendMessageCop;
-	
+	private _pos = getPos (_this select 1);
+	private _message = [_pos] call GetKillerLocationMessage;
+	[_message] call SendMessageCop;
 };
 
 GetClosestDistrict = {
@@ -126,3 +127,23 @@ GetCivKillMessage = {
 
 	_message;
 };
+
+GetKillerLocationMessage = {
+	private _killerLocation = _this select 0;
+	private _district = [_killerLocation] call GetClosestDistrict;
+	private _message = format["The killer is in %1", (_district select 1)];
+
+	if(_killerLocation distance (_district select 0) < 100) then {
+		_message = format["The killer is near", _district select 1];
+	};
+
+	if(_killerLocation distance (_district select 0) < 500) then {
+		_message = format["The killer is in the vinicity of %1", (_district select 1)];
+	};
+
+	if(_killerLocation distance (_district select 0) > 500) then {
+		_message = format["The killer is greater than half a click from %1", (_district select 1)];
+	};
+
+	_message;
+}
