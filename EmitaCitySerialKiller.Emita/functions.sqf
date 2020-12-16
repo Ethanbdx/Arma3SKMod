@@ -62,6 +62,11 @@ CreateKillerMarker= {
 	[_marker, _killer];
 };
 
+"RevealedKiller" addPublicVariableEventHandler {
+	["Enough evidence collected, the killer has been temporarily marked on your map."] call SendMessageCop;
+	
+};
+
 GetClosestDistrict = {
 	private _queryPosition = _this select 0;
 	private _closestDistrict = (Districts select 0);

@@ -5,6 +5,7 @@ CivAccidents = 0;
 LoadingProgress = 0;
 CivsReady = false;
 InvestigatedBodies = [];
+RevealedKiller = [nil, false];
 NoAlertVehicles = [];
 Civs = [];
 Districts = [];
