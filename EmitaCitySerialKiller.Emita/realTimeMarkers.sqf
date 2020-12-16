@@ -44,19 +44,5 @@ while({true}) do {
 		};
 	} foreach Markers;
 
-	if(RevealedKiller select 1) then {
-		KillerRevealMarker = [(RevealedKiller select 0)] call CreateKillerMarker;
-		Markers pushBack KillerRevealMarker;
-
-		RevealedKiller = [nil, false];
-		publicVariable "RevealedKiller";
-	} else {
-		if(KillerRevealMarker in Markers) then {
-			private _index = Markers find KillerRevealMarker;
-			Markers deleteAt _index;
-			deleteMarker (KillerRevealMarker select 0);
-		};
-	};
-
 	sleep 5;
 };
