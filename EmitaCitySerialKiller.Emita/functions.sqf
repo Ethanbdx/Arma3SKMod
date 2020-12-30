@@ -16,6 +16,8 @@ SyncGlobalVars = {
 	publicVariable "InvestigatedBodies";
 	publicVariable "StartLocation";
 	publicVariable "KillerStartLocations";
+	publicVariable "killer1";
+	publicVariable "killer2";
 };
 
 CreateKillMarker = {
@@ -61,12 +63,6 @@ CreateKillerMarker= {
 	_marker setMarkerColor "ColorPink";
 	
 	[_marker, _killer];
-};
-
-"RevealedKiller" addPublicVariableEventHandler {
-	private _pos = getPos ((_this select 1) select 0);
-	private _message = [_pos] call GetKillerLocationMessage;
-	[_message] call SendMessageCop;
 };
 
 GetClosestDistrict = {

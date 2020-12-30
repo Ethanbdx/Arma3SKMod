@@ -344,7 +344,7 @@ CivVehicles = [
 	"d3s_avalon_18_LTD",
 	"d3s_wrx_17",
 	"d3s_clubman_11_w"
-];"
+];
 CivModels = [
 	"CUP_C_C_Pilot_01",
 	"CUP_C_C_Citizen_01",
